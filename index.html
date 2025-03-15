@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocean Shine - Professional Boat Detailing Services</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Lato:wght@300;400;700&display=swap');
+        
+        :root {
+            --navy: #051937;
+            --navy-light: #1a3a68;
+            --navy-bg: #0a2648;
+            --white: #ffffff;
+            --off-white: #f5f5f5;
+            --black: #000000;
+            --gray: #333333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--white);
+            background-color: var(--navy-bg);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' fill='%231a3a68' opacity='0.2'%3E%3Cpath d='M25,50 L40,40 L50,50 L50,70 L25,70 Z' /%3E%3Cpath d='M50,30 L60,25 L75,30 L80,45 L50,45 Z' /%3E%3Cpath d='M15,15 L25,10 L35,15 L35,25 L15,25 Z' /%3E%3Cpath d='M65,60 L75,55 L85,60 L85,70 L65,70 Z' /%3E%3Cpath d='M10,80 L20,75 L30,80 L30,90 L10,90 Z' /%3E%3Cpath d='M85,10 L90,5 L95,10 L95,20 L85,20 Z' /%3E%3C/svg%3E");
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+        
+        header {
+            background-color: var(--navy);
+            color: var(--white);
+            padding: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Wave border effect for header */
+        header::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 15px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 30" preserveAspectRatio="none"><path d="M0,0 C150,40 350,0 500,20 C650,40 700,0 900,10 C1050,20 1150,40 1200,10 L1200,30 L0,30 Z" fill="white"/></svg>') repeat-x;
+            background-size: 1200px 30px;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-family: 'Lato', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--white);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo::before {
+            content: "";
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M261.56,101.28a8,8,0,0,0-11.06,0L66.4,277.15a8,8,0,0,0-2.47,5.79L63.9,448a32,32,0,0,0,32,32H192a16,16,0,0,0,16-16V328a8,8,0,0,1,8-8h80a8,8,0,0,1,8,8V464a16,16,0,0,0,16,16H416a32,32,0,0,0,32-32V282.94a8,8,0,0,0-2.47-5.79Z" fill="white"/></svg>');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+        
+        .logo span {
+            color: var(--off-white);
+        }
+        
+        .menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .menu li {
+            margin-left: 1.5rem;
+        }
+        
+        .menu a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            padding: 0.5rem 1rem;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+        
+        .menu a:hover {
+            background-color: var(--navy-light);
+        }
+        
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 3rem 1rem;
+            background-color: var(--navy);
+            color: var(--white);
+            background-image: linear-gradient(rgba(5, 25, 55, 0.8), rgba(5, 25, 55, 0.8)), url('/api/placeholder/1200/800');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        h1 {
+            font-family: 'Lato', sans-serif;
+            font-size: 2.6rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .tagline {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+        
+        .cta-button {
+            background-color: var(--white);
+            color: var(--navy);
+            padding: 0.9rem 1.8rem;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--white);
+        }
+        
+        .cta-button:hover {
+            background-color: transparent;
+            color: var(--white);
+        }
+        
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+            background-color: var(--navy);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .section-title {
+            font-family: 'Lato', sans-serif;
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 2.5rem;
+            position: relative;
+            color: var(--navy);
+            padding-bottom: 1rem;
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background-color: var(--navy);
+        }
+        
+        /* Boat icon border for sections */
+        .boat-border {
+            position: relative;
+            margin: 3rem 0;
+            padding: 2rem;
+            border: 2px solid var(--white);
+            border-radius: 10px;
+            background-color: var(--navy);
+        }
+        
+        .boat-border::before {
+            content: "";
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            width: 30px;
+            height: 30px;
+            background-color: var(--navy);
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M416,473.17a83.1,83.1,0,0,1-41.91-11.53,83.18,83.18,0,0,0-83.82,0,83.32,83.32,0,0,1-83.82,0,83.18,83.18,0,0,0-83.82,0A83.12,83.12,0,0,1,80,473.17c-25.43,0-45.24-35.92-46.59-38.36L32,432V336a16,16,0,0,1,16-16H464a16,16,0,0,1,16,16v96l-1.41,2.78C477.28,437.25,458.83,473.17,416,473.17Z" fill="white"/></svg>');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            border-radius: 50%;
+            border: 2px solid var(--white);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background-color: var(--navy-light);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            color: var(--white);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .service-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+        
+        .service-card:hover .service-img img {
+            transform: scale(1.1);
+        }
+        
+        .service-content {
+            padding: 1.5rem;
+        }
+        
+        .service-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: var(--navy);
+            font-family: 'Lato', sans-serif;
+        }
+        
+        .why-us-section {
+            margin: 4rem 0;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 10px;
+            background-color: var(--navy-light);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            color: var(--white);
+        }
+        
+        .feature:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 1.5rem;
+            padding: 15px;
+            background-color: var(--navy);
+            border-radius: 50%;
+        }
+        
+        .feature-icon svg {
+            width: 100%;
+            height: 100%;
+            fill: var(--white);
+        }
+        
+        .feature-title {
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            color: var(--navy);
+            font-family: 'Lato', sans-serif;
+        }
+        
+        .pricing-section {
+            margin: 4rem 0;
+        }
+        
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+        }
+        
+        .pricing-table th, .pricing-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .pricing-table th {
+            background-color: var(--navy-light);
+            color: var(--white);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .pricing-table tr:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+        
+        .pricing-table tr:nth-child(odd) {
+            background-color: rgba(255, 255, 255, 0.02);
+        }
+        
+        .testimonials-section {
+            margin: 4rem 0;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .testimonial-card {
+            padding: 2rem;
+            border-radius: 10px;
+            background-color: var(--navy-light);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            color: var(--white);
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            font-size: 5rem;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: var(--navy);
+            opacity: 0.2;
+            font-family: serif;
+        }
+        
+        .testimonial-text {
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 1rem;
+        }
+        
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-name {
+            font-weight: 600;
+            color: var(--off-white);
+        }
+        
+        .contact-section {
+            margin: 4rem 0;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .contact-info {
+            padding: 2rem;
+            background-color: var(--navy);
+            color: var(--white);
+            border-radius: 10px;
+        }
+        
+        .contact-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-detail {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-icon {
+            min-width: 24px;
+            margin-right: 1rem;
+        }
+        
+        .contact-form {
+            padding: 2rem;
+            background-color: var(--navy-light);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            color: var(--white);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--off-white);
+        }
+        
+        input, textarea, select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+        
+        textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+        
+        .submit-button {
+            background-color: var(--navy);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .submit-button:hover {
+            background-color: var(--navy-light);
+        }
+        
+        footer {
+            background-color: var(--navy);
+            color: var(--white);
+            padding: 3rem 1rem;
+            position: relative;
+        }
+        
+        /* Wave border effect for footer */
+        footer::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 15px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 30" preserveAspectRatio="none"><path d="M0,30 C150,0 350,40 500,20 C650,0 700,40 900,30 C1050,20 1150,0 1200,30 L1200,0 L0,0 Z" fill="white"/></svg>') repeat-x;
+            background-size: 1200px 30px;
+            transform: rotate(180deg);
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .footer-column h3::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--white);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-links a {
+            color: var(--off-white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--white);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--navy-light);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background-color: var(--white);
+        }
+        
+        .social-link svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--white);
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover svg {
+            fill: var(--navy);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+            }
+            
+            .menu {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .menu li {
+                margin: 0.5rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .tagline {
+                font-size: 1.1rem;
+            }
+            
+            /* Add extra boat SVGs to the background for smaller screens */
+            body::after {
+                content: "";
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 100 100' fill='%231a3a68' opacity='0.1'%3E%3Cpath d='M20,30 L30,25 L40,30 L40,40 L20,40 Z' /%3E%3Cpath d='M70,50 L80,45 L90,50 L90,60 L70,60 Z' /%3E%3C/svg%3E");
+                z-index: -1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#" class="logo">Ocean<span>Shine</span></a>
+            <ul class="menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="hero">
+            <h1>Professional Boat Detailing</h1>
+            <p class="tagline">Restoring beauty and value to your watercraft</p>
+            <a href="#contact" class="cta-button">Book Now</a>
+        </div>
+    </header>
+    
+    <main>
+        <section id="services" class="services-section">
+            <h2 class="section-title">Our Services</h2>
+            <div class="boat-border">
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="/api/placeholder/400/300" alt="Exterior Detailing">
+                        </div>
+                        <div class="service-content">
+                            <h3 class="service-title">Exterior Detailing</h3>
+                            <p>Our comprehensive exterior detailing includes washing, waxing, polishing, and UV protection for your boat's hull and topsides. We use marine-grade products that protect against saltwater, sun damage, and environmental elements.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="/api/placeholder/400/300" alt="Interior Detailing">
+                        </div>
+                        <div class="service-content">
+                            <h3 class="service-title">Interior Detailing</h3>
+                            <p>From cabin cleaning to upholstery treatment, our interior detailing service covers every aspect of your boat's living spaces. We'll remove stains, eliminate odors, and apply protective treatments to vinyl, leather, and fabric surfaces.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="/api/placeholder/400/300" alt="Metal Polishing">
+                        </div>
+                        <div class="service-content">
+                            <h3 class="service-title">Metal Polishing</h3>
+                            <p>Restore the shine to your boat's metal surfaces with our specialized metal polishing service. We'll remove oxidation, tarnish, and water spots from stainless steel, chrome, aluminum, and brass fixtures.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="/api/placeholder/400/300" alt="Teak Restoration">
+                        </div>
+                        <div class="service-content">
+                            <h3 class="service-title">Teak Restoration</h3>
+                            <p>Our teak restoration service brings back the natural beauty of your wooden surfaces. We clean, sand, and apply protective oils or sealants to preserve and enhance the appearance of your teak decking and trim.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="/api/placeholder/400/300" alt="Hull Maintenance">
+                        </div>
+                        <div class="service-content">
+                            <h3 class="service-title">Hull Maintenance</h3>
+                            <p>Keep your hull in top condition with our regular maintenance services. We'll remove algae, barnacles, and other marine growth, and apply anti-fouling treatments to protect against future buildup.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="/api/placeholder/400/300" alt="Paint Correction">
+                        </div>
+                        <div class="service-content">
+                            <h3 class="service-title">Paint Correction</h3>
+                            <p>Our paint correction services remove scratches, oxidation, and fading from your boat's gelcoat or painted surfaces. We use professional-grade compounds and equipment to restore the original finish.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="why-us" class="why-us-section">
+            <h2 class="section-title">Why Choose Us</h2>
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                            <path d="M256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48zm-88 302c-13.2 0-24-10.8-24-24s10.8-24 24-24 24 10.8 24 24-10.8 24-24 24zm88 0c-13.2 0-24-10.8-24-24s10.8-24 24-24 24 10.8 24 24-10.8 24-24 24zm88 0c-13.2 0-24-10.8-24-24s10.8-24 24-24 24 10.8 24 24-10.8 24-24 24z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Experienced Professionals</h3>
+                    <p>Our team has over 15 years of experience in marine detailing and boat care. We understand the unique challenges of maintaining watercraft.</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                            <path d="M256 48C141.6 48 48 141.6 48 256s93.6 208 208 208 208-93.6 208-208S370.4 48 256 48zm0 62.4c34.3 0 62.4 28.1 62.4 62.4s-28.1 62.4-62.4 62.4-62.4-28.1-62.4-62.4 28.1-62.4 62.4-62.4zm0 300.4c-52 0-97.8-27-124.8-66.6 1-41.6 83.2-64.5 124.8-64.5s123.8 22.9 124.8 64.5c-27 39.5-72.8 66.6-124.8 66.6z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Personalized Service</h3>
+                    <p>We customize our detailing services to meet the specific needs of your boat, whether it's a small fishing vessel or a luxury yacht.</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                            <path d="M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48zm114.45 272.63l-149.37 85.57a16 16 0 01-23.08-14.31V120.11a16 16 0 0123.08-14.31l149.37 85.57a16 16 0 010 28.1l-149.37 85.57a16 16 0 01-23.08-14.31V120.11a16 16 0 0123.08-14.31l149.37 85.57a16 16 0 010 28.1z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Quality Products</h3>
+                    <p>We use only premium marine-grade detailing products that are specifically formulated for boats and water vessels.</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                            <path d="M256 48C141.13 48 48 141.13 48 256s93.13 208 208 208 208-93.13 208-208S370.87 48 256 48zm108.11 145.08L225.05 325.14a16 16 0 01-22.64 0l-68.52-68.52a16 16 0 0122.64-22.63l57.2 57.2L330.17 160a16 16 0 0122.63-.08 16 16 0 0111.31 4.55 16 16 0 010 28.61z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Satisfaction Guaranteed</h3>
+                    <p>We stand behind our work with a 100% satisfaction guarantee. If you're not completely satisfied, we'll make it right.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="pricing" class="pricing-section">
+            <h2 class="section-title">Our Pricing</h2>
+            <div class="boat-border">
+                <p>Our pricing is based on the size of your vessel and the specific services needed. Below is a general guideline of our pricing structure:</p>
+                <table class="pricing-table">
+                    <thead>
+                        <tr>
+                            <th>Service Type</th>
+                            <th>Small Boat (Up to 20ft)</th>
+                            <th>Medium Boat (21-30ft)</th>
+                            <th>Large Boat (31-45ft)</th>
+                            <th>Yacht (46ft+)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Basic Wash</td>
+                            <td>$125</td>
+                            <td>$175</td>
+                            <td>$250</td>
+                            <td>$10/ft</td>
+                        </tr>
+                        <tr>
+                            <td>Exterior
